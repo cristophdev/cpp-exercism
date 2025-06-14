@@ -1,21 +1,19 @@
 #include <iostream>
-#include "src/interest_is_interesting/interest_is_interesting.h"
+#include "src/ellens_alien_game/ellens_alien_game.h"
 
 using namespace std;
 
 int main()
 {
-  double balance = 9850.50;
-  double target_balance = 100000.00;
+  ellens_alien_game::Alien Alien(0, 0);
+  cout << "Alien's health: " << Alien.get_health() << endl;
 
-  double INTEREST_RATE = interest_is_interesting::interest_rate(balance);
-  double YEARLY_INTEREST = interest_is_interesting::yearly_interest(balance);
-  double ANNUAL_BALANCE_UPDATE = interest_is_interesting::annual_balance_update(balance);
-  double YEARS_UNTIL_DESIRED_BALANCE = interest_is_interesting::years_until_desired_balance(balance, target_balance);
+  Alien.hit();
+  cout << "Alient's health after a hit: " << Alien.get_health() << endl;
+  cout << "Is the alien alive? " << Alien.is_alive() << endl;
 
-  cout << "Interest Rate: " << INTEREST_RATE << endl;
-  cout << "Yearly Interest: " << YEARLY_INTEREST << endl;
-  cout << "Annual Balance Update: " << ANNUAL_BALANCE_UPDATE << endl;
-  cout << "Years Until Desired Balance: " << YEARS_UNTIL_DESIRED_BALANCE << endl; 
+  cout << endl;
+
+  cout << "Alien teleported!! " << Alien.teleport(1, 2) << endl;
   return 0;
 }
