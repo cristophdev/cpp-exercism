@@ -1,15 +1,13 @@
 #include <iostream>
-#include "src/freelancer_rates.h"
+#include "src/last_will.h"
+
+using namespace std;
 
 int main() {
-  int DAILY_RATE = freelancer_rates::daily_rate(8);
-  int DISCOUNT = freelancer_rates::apply_discount(400, 10);
-  int MONTHLY_RATE = freelancer_rates::monthly_rate(10, 5);
-  int DAYS_IN_BUDGET = freelancer_rates::days_in_budget(400, 10, 5);
+  int ZHANG_BANK_NUMBER_PART = zhang::bank_number_part(1000);
+  int ZHANG_RED = zhang::red::code_fragment();
 
-  std::cout << "Daily Rate: " << DAILY_RATE << std::endl;
-  std::cout << "Discount: " << DISCOUNT << std::endl;
-  std::cout << "Monthly Rate: " << MONTHLY_RATE << std::endl;
-  std::cout << "Days in Budget: " << DAYS_IN_BUDGET << std::endl;
+  cout << "Zhang Bank Number Part: " << ZHANG_BANK_NUMBER_PART << endl;
+  cout << "Zhang Red: " << ZHANG_RED << endl;
   return 0;
 }
