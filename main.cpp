@@ -1,13 +1,17 @@
 #include <iostream>
-#include "src/last_will.h"
+#include "src/pacman_rules/pacman_rules.h"
 
 using namespace std;
 
 int main() {
-  int ZHANG_BANK_NUMBER_PART = zhang::bank_number_part(1000);
-  int ZHANG_RED = zhang::red::code_fragment();
+  bool CAN_EAT_GHOST = pacman_rules::can_eat_ghost(false, true);
+  bool SCORED = pacman_rules::scored(true, true);
+  bool LOST = pacman_rules::lost(false, true);
+  bool WON = pacman_rules::won(false, false, true);
 
-  cout << "Zhang Bank Number Part: " << ZHANG_BANK_NUMBER_PART << endl;
-  cout << "Zhang Red: " << ZHANG_RED << endl;
+  cout << "Can you eat a ghost?: " << CAN_EAT_GHOST << endl;
+  cout << "Have you scored?: " << SCORED << endl;
+  cout << "Have you lost?: " << LOST << endl;
+  cout << "Have you won?: " << WON << endl;
   return 0;
 }
