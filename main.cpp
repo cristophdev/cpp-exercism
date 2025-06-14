@@ -1,17 +1,15 @@
 #include <iostream>
-#include "src/pacman_rules/pacman_rules.h"
+#include "src/vehicle_purchase/vehicle_purchase.h"
 
 using namespace std;
 
 int main() {
-  bool CAN_EAT_GHOST = pacman_rules::can_eat_ghost(false, true);
-  bool SCORED = pacman_rules::scored(true, true);
-  bool LOST = pacman_rules::lost(false, true);
-  bool WON = pacman_rules::won(false, false, true);
+  bool NEEDS_LICENCE = vehicle_purchase::needs_license("Bicycle");
+  string CHOOSE_VEHICLE = vehicle_purchase::choose_vehicle("Mercedez", "Buggati");
+  double RESELL_PRICE = vehicle_purchase::calculate_resell_price(1000000.0, 2.0);
 
-  cout << "Can you eat a ghost?: " << CAN_EAT_GHOST << endl;
-  cout << "Have you scored?: " << SCORED << endl;
-  cout << "Have you lost?: " << LOST << endl;
-  cout << "Have you won?: " << WON << endl;
+  cout << "A bicycle needs a licence? " << NEEDS_LICENCE << endl;
+  cout << "Is a bugatti better than a Mercedez? " << CHOOSE_VEHICLE << endl;
+  cout << "How much you can sell your car for? " << RESELL_PRICE << endl;
   return 0;
 }
