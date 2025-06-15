@@ -1,14 +1,16 @@
 #include <iostream>
-#include "src/troll_the_trolls/troll_the_trolls.h"
+#include "src/doctor_data/doctor_data.h"
 
 using namespace std;
 
 int main()
 {
-  troll_the_troll::AccountStatus ACCOUNT1 = troll_the_troll::AccountStatus::troll;
-  troll_the_troll::AccountStatus ACCOUNT2 = troll_the_troll::AccountStatus::user;
+  heaven::Vessel VESSEL1("Whatever", 10, star_map::System::AlphaCentauri);
 
-  cout << "Can you have permission? " << troll_the_troll::permission_check(troll_the_troll::Action::write, ACCOUNT1) << endl;
-  cout << "Have you priority? " << troll_the_troll::has_priority(ACCOUNT1, ACCOUNT2) << endl;
+  auto v = VESSEL1.replicate("Eea");
+  VESSEL1.make_buster();
+
+  cout << "Name of v: " << v.name << endl;
+  cout << "Busters: " << VESSEL1.busters << endl;
   return 0;
 }
