@@ -1,16 +1,21 @@
 #include <iostream>
-#include "src/doctor_data/doctor_data.h"
+#include "src/lasagna_master/lasagna_master.h"
 
 using namespace std;
 
 int main()
 {
-  heaven::Vessel VESSEL1("Whatever", 10, star_map::System::AlphaCentauri);
+  ingredients list {"Pim", "Pam", "Truku", "Truku"};
 
-  auto v = VESSEL1.replicate("Eea");
-  VESSEL1.make_buster();
+  int time = lasagna_master::preparationTime(list, 2);
+  lasagna_master::addSecretIngredient(list, "mtc");
 
-  cout << "Name of v: " << v.name << endl;
-  cout << "Busters: " << VESSEL1.busters << endl;
+  cout << "Preparation Time: " << time << endl;
+
+  cout << "Ingredients: " << endl;
+  for (auto i : list)
+  {
+    cout << i << endl;
+  }
   return 0;
 }
