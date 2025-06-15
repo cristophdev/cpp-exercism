@@ -1,19 +1,21 @@
 #include <iostream>
-#include "src/ellens_alien_game/ellens_alien_game.h"
+#include "src/election_day/election_day.h"
 
 using namespace std;
 
 int main()
 {
-  ellens_alien_game::Alien Alien(0, 0);
-  cout << "Alien's health: " << Alien.get_health() << endl;
+  election_day::ElectionResult candidate1{"Cristopher", 999};
+  election_day::ElectionResult candidate2{"Whoever", 100};
 
-  Alien.hit();
-  cout << "Alient's health after a hit: " << Alien.get_health() << endl;
-  cout << "Is the alien alive? " << Alien.is_alive() << endl;
+  vector<election_day::ElectionResult> finalCount = {candidate1, candidate2};
 
-  cout << endl;
+  auto &winner = election_day::determine_result(finalCount);
 
-  cout << "Alien teleported!! " << Alien.teleport(1, 2) << endl;
+  cout << candidate1.name << " votes: " << election_day::vote_count(candidate1) << endl;
+  cout << candidate2.name << " votes: " << election_day::vote_count(candidate2) << endl;
+
+  cout << endl
+       << "Winner: " << winner.name << " with " << winner.votes << " votes." << endl;
   return 0;
 }
