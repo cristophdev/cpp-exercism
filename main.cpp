@@ -1,21 +1,14 @@
 #include <iostream>
-#include "src/election_day/election_day.h"
+#include "src/troll_the_trolls/troll_the_trolls.h"
 
 using namespace std;
 
 int main()
 {
-  election_day::ElectionResult candidate1{"Cristopher", 999};
-  election_day::ElectionResult candidate2{"Whoever", 100};
+  troll_the_troll::AccountStatus ACCOUNT1 = troll_the_troll::AccountStatus::troll;
+  troll_the_troll::AccountStatus ACCOUNT2 = troll_the_troll::AccountStatus::user;
 
-  vector<election_day::ElectionResult> finalCount = {candidate1, candidate2};
-
-  auto &winner = election_day::determine_result(finalCount);
-
-  cout << candidate1.name << " votes: " << election_day::vote_count(candidate1) << endl;
-  cout << candidate2.name << " votes: " << election_day::vote_count(candidate2) << endl;
-
-  cout << endl
-       << "Winner: " << winner.name << " with " << winner.votes << " votes." << endl;
+  cout << "Can you have permission? " << troll_the_troll::permission_check(troll_the_troll::Action::write, ACCOUNT1) << endl;
+  cout << "Have you priority? " << troll_the_troll::has_priority(ACCOUNT1, ACCOUNT2) << endl;
   return 0;
 }
