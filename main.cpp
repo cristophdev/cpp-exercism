@@ -1,14 +1,12 @@
 #include <iostream>
-#include "src/leap/leap.h"
+#include "src/reverse_string/reverse_string.h"
 
 using namespace std;
 
 int main()
 {
-  int year = 2004; // MY BD
-  int actualYear = 2025;
+  string name = "Cristopher";
 
-  cout << "2004 is a leap year? " << leap::is_leap_year(year) << endl;
-  cout << "2025 is a leap year? " << leap::is_leap_year(actualYear) << endl;
+  cout << "Original string: " << name << " reversed string: " << reverse_string::reverse_string(name) << endl;
   return 0;
 }
