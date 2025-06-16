@@ -1,30 +1,34 @@
 #include <iostream>
-#include "src/power_of_troy/power_of_troy.h"
+#include "src/speedywagon_fundation/speedywagon_fundation.h"
 
 using namespace std;
 
 int main()
 {
-  troy::human HUMAN1;
-  troy::human HUMAN2;
-  troy::give_new_artifact(HUMAN1, "MIGHT");
-  troy::give_new_artifact(HUMAN2, "WILL");
+  speedywagon::pillar_men_sensor SPEEDYWAGON{10, "LA", {1, 2, 3}};
+  size_t dimension = 10;
 
-  // type: troy::artifact *POSSESION_PT
-  auto POSSESION_PT = HUMAN1.possession.get();
-  auto POSSESION2_PT = HUMAN2.possession.get();
+  cout << "DATA IN THE SPEEDYWAGON: " << endl;
+  for (size_t i = 0; i < SPEEDYWAGON.data.size(); ++i)
+  {
+    cout << SPEEDYWAGON.data[i];
+    if (i == SPEEDYWAGON.data.size() - 1)
+      cout << "." << endl;
+    else
+      cout << ", ";
+  }
 
-  cout << "Before exchange:" << endl;
-  cout << "HUMAN1 artifact: " << POSSESION_PT->name << " at " << POSSESION_PT << endl;
-  cout << "HUMAN2 artifact: " << POSSESION2_PT->name << " at " << POSSESION2_PT << endl;
+  auto UV_LIGHT_HEURISTIC = speedywagon::uv_light_heuristic(&SPEEDYWAGON.data);
+  cout << "UV LIGHT HEURISTIC:" << UV_LIGHT_HEURISTIC << endl;
 
-  troy::exchange_artifacts(HUMAN1.possession, HUMAN2.possession);
+  bool CONNECTION_CHECK = speedywagon::connection_check(&SPEEDYWAGON);
+  cout << "CONNECTION CHECK: " << CONNECTION_CHECK << endl;
 
-  POSSESION_PT = HUMAN1.possession.get();
-  POSSESION2_PT = HUMAN2.possession.get();
+  int ACTIVITY_COUNTER = speedywagon::activity_counter(&SPEEDYWAGON, dimension);
+  cout << "ACTIVITY COUNTER: " << ACTIVITY_COUNTER << endl;
 
-  cout << "\nAfter exchange:" << endl;
-  cout << "HUMAN1 artifact: " << POSSESION_PT->name << " at " << POSSESION_PT << endl;
-  cout << "HUMAN2 artifact: " << POSSESION2_PT->name << " at " << POSSESION2_PT << endl;
+  bool ALARM_CONTROL = speedywagon::alarm_control(&SPEEDYWAGON);
+  cout << "ALARM CONTROL: " << ALARM_CONTROL << endl;
+
   return 0;
 }
