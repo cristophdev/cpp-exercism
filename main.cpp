@@ -1,13 +1,12 @@
 #include <iostream>
-#include "src/grains/grains.h"
+#include "src/raindrops/raindrops.h"
 
 using namespace std;
 
 int main()
 {
-  uint64_t a = grains::square(64);
+  string RAINDROPS = raindrops::convert(33);
 
-  cout << a << endl;
-
+  cout << RAINDROPS << endl;
   return 0;
 }
