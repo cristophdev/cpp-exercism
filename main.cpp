@@ -1,12 +1,17 @@
 #include <iostream>
-#include "src/pangram/pangram.h"
+#include "src/protein_translation/protein_translation.h"
 
 using namespace std;
 
 int main()
 {
-  bool PANGRAM = pangram::is_pangram("Hello this is not a pangram");
+  const string protein{"UUA"};
 
-  cout << PANGRAM << endl;
+  vector<string> PROTEINS = protein_translation::proteins(protein);
+
+  for (auto i : PROTEINS)
+  {
+    cout << i << endl;
+  }
   return 0;
 }
