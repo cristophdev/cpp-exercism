@@ -1,12 +1,12 @@
 #include <iostream>
-#include "src/raindrops/raindrops.h"
+#include "src/pangram/pangram.h"
 
 using namespace std;
 
 int main()
 {
-  string RAINDROPS = raindrops::convert(33);
+  bool PANGRAM = pangram::is_pangram("Hello this is not a pangram");
 
-  cout << RAINDROPS << endl;
+  cout << PANGRAM << endl;
   return 0;
 }
